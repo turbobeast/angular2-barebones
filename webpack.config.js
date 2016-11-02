@@ -25,6 +25,9 @@ module.exports = {
     },
 
     plugins: [
+        new webpack.DefinePlugin({
+            __PRODUCTION__: process.env.NODE_ENV === 'production'
+        }),
         new HtmlWebpackPlugin({
             template: path.join('src', 'index.html')
         }),

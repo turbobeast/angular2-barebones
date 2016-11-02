@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist",
     "build": "npm run clean && webpack",
-    "build:prod": "npm run clean && webpack -p",
+    "build:prod": "npm run clean && export NODE_ENV=production && webpack -p",
     "start": "webpack-dev-server"
   },
   "author": "George Michael Faust <georgemichaelfaust@gmail.com> (http://georgemichaelfaust.com/)",
