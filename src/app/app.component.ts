@@ -1,7 +1,13 @@
 import { Component } from '@angular/core'
+import { Lyrics } from './lyrics.service'
 
 @Component({
     selector: 'turbo-app',
-    template: `my girl likes to party all the time, party all the time`
+    template: `<p>{{message}}</p>`,
 })
-export class AppComponent {}
+export class AppComponent {
+    message = ''
+    constructor (private lyrics: Lyrics) {
+        this.message = this.lyrics.getLine()
+    }
+}
