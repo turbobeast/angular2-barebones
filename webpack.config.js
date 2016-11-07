@@ -1,3 +1,5 @@
+'use strict'
+
 const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -19,6 +21,7 @@ module.exports = {
             loaders: ['awesome-typescript-loader']
         }]
     },
+    
     output: {
         path: path.join(__dirname, 'dist'),
         filename: '[name].[chunkhash].js'
