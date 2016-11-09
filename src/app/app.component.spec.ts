@@ -1,9 +1,10 @@
 import { TestBed } from '@angular/core/testing'
 import { configureTests } from '../test.configure'
+import {APP_BASE_HREF} from '@angular/common';
 
 import { AppModule } from './app.module'
 import { AppComponent} from './app.component'
-import { Lyrics } from './lyrics.service'
+import { Lyrics } from './services/lyrics.service'
 
 class FakeLyrics {
     getLine (): string {
@@ -18,7 +19,10 @@ describe("AppComponent", () => {
         const configure = (testBed: TestBed) => {
             testBed.configureTestingModule({
                 imports: [AppModule],
-                providers: [{provide: Lyrics, useClass: FakeLyrics}]
+                providers: [
+                    { provide: Lyrics, useClass: FakeLyrics },
+                    { provide: APP_BASE_HREF, useValue : '/' }
+                ]
             })
         }
 
