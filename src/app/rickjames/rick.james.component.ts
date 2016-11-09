@@ -5,6 +5,8 @@ import { Component } from '@angular/core'
     <p>{{message}}</p>
     <nav>
         <a routerLink="superfreak">superfreak</a>
+        <a routerLink="giveittomebaby">give it to me, baby</a>
+    </nav>
     <router-outlet></router-outlet>`,
 })
 export class RickJamesComponent {
