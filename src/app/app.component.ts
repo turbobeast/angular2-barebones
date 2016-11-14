@@ -1,9 +1,32 @@
 import { Component } from '@angular/core'
-import { Lyrics } from './lyrics.service'
+import { Lyrics } from './services/lyrics.service'
 
 @Component({
     selector: 'turbo-app',
-    template: `<p>{{message}}</p>`,
+    styles: [`
+        * {
+            font-family: Arial;
+        }
+        a {
+            text-decoration: none;
+            color: #
+        }
+        a.active {
+            color: #000000
+        }
+    `],
+    template: `<p>{{message}}</p>
+            <nav>
+                <a
+                    routerLink="/"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}">home</a>
+
+                <a 
+                    routerLink="rickjames"
+                    routerLinkActive="active">rick james</a>
+            </nav>
+            <router-outlet></router-outlet>`,
 })
 export class AppComponent {
     message = ''
