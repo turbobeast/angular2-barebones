@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "es2015",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "outDir": "./dist"
+    },
+    "declarations": false,
+    "files": [
+      "src/app/main",
+      "src/app/rickjames/rick.james.module.ts"
+    ],
+    "angularCompilerOptions": {
+      "genDir": "aot",
+      "skipMetadataEmit": true
+    }
+}

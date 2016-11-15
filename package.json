@@ -4,14 +4,18 @@
   "description": "angular2 skeleton",
   "scripts": {
     "test": "karma start --singleRun true",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf dist && rm -rf aot && ./cleanjs.sh",
+    "aot": "echo \"WARN: this does not configure a build or run the webpack.aot.config.js\" && node_modules/.bin/ngc -p tsconfig-aot.json",
     "build": "npm run clean && webpack",
     "build:prod": "npm run clean && export NODE_ENV=production && webpack -p",
+    "build:aot": "npm run clean && webpack --config webpack.aot.config.js",
     "start": "webpack-dev-server"
   },
   "author": "George Michael Faust <georgemichaelfaust@gmail.com> (http://georgemichaelfaust.com/)",
   "license": "MIT",
   "devDependencies": {
+    "@ngtools/webpack": "^1.1.5",
+    "@types/chai": "^3.4.34",
     "@types/core-js": "^0.9.34",
     "@types/jasmine": "^2.5.37",
     "@types/node": "^6.0.46",
@@ -39,14 +43,16 @@
   "dependencies": {
     "@angular/common": "2",
     "@angular/compiler": "2",
+    "@angular/compiler-cli": "^2.1.2",
     "@angular/core": "2",
     "@angular/forms": "2",
     "@angular/platform-browser": "2",
     "@angular/platform-browser-dynamic": "2",
+    "@angular/platform-server": "^2.1.2",
     "@angular/router": "3",
     "babel-polyfill": "^6.16.0",
     "reflect-metadata": "^0.1.8",
-    "rxjs": "5.0.0-beta.12",
+    "rxjs": "^5.0.0-rc.2",
     "systemjs": "^0.19.40",
     "zone.js": "^0.6.26"
   }
