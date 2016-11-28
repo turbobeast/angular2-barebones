@@ -4,7 +4,11 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true
     },
-    "exclude": ["node_modules", "dist"],
+    "files": [
+      "src/app/*",
+      "src/app/**"
+    ],
+    "exclude": ["node_modules", "dist", "!node_modules/@types"],
     "awesomeTypescriptLoaderOptions": {
         "useBabel": true
     }
